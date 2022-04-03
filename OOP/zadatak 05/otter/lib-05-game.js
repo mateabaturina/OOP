@@ -374,7 +374,7 @@ class Sprite extends GameWorldObjectAnimator {
    */
   touching(sprite) {
     console.log("Touching ne radi");
-  } //// touching
+  } //// touching 
 
   /**
    * Provjerava je li lik kliknut.

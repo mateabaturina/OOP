@@ -47,6 +47,16 @@ class Animal extends Sprite {
     this.okvir = true;
 
   }
+
+  touching(sprite) {
+    if(this.x == sprite.x && this.y == sprite.y && sprite.visible == true){
+      return true;
+    }
+
+    if(sprite.visible == false){
+      return false;
+    }
+  } 
 }
 
 class Cat extends Animal {
@@ -67,7 +77,7 @@ class Cat extends Animal {
 
 class Dog extends Animal {
   constructor(layer){
-    super(560, 0, layer);
+    super(580, 0, layer);
 
     this.direction = 90;
   }

@@ -57,5 +57,5 @@ function update_main() {
     console.log("Diram psa")
   }
 
-  GAME.update();
+  GAME.update(); 
 };
