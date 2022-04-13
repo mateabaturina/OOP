@@ -79,6 +79,16 @@ function setupVjezbe6() {
   GAME.addSprite(voda);
   voda.visible = true;
 
+  let gljivaL = GAME.getSpriteLayer("gljiva");
+  let gljiva = new Item(gljivaL);
+  GAME.addSprite(gljiva); 
+  gljiva.visible = true;
+
+  let strelicaL = GAME.getSpriteLayer("strelica");
+  let strelica = new Item(strelicaL);
+  GAME.addSprite(strelica); 
+  strelica.visible = true;
+
   // postaviti mapu kolizija
 
   //Item

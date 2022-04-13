@@ -39,11 +39,18 @@ function vjezbe6() {
   //brojevi ovise o redoslijedu kako su likovi dodani
   let fast = GAME.activeWorldMap.sprites[1];
   let voda = GAME.activeWorldMap.sprites[2];
+  let gljiva = GAME.activeWorldMap.sprites[3];
+  let strelica = GAME.activeWorldMap.sprites[4];
 
   if (SENSING.right.active) {
     //ako dodiruje sprite "fast", ide desno brzinom 5
     if (r.touching(fast)) {
       r.moveRight(5);
+    }
+    if (r.touching(strelica)) {
+      ENGINE.stop();
+      GameSettings.output("Igra je gotova!");
+      GameSettings.output("Engine stopped");
     }
     else {
       r.moveRight();
@@ -63,6 +70,9 @@ function vjezbe6() {
     //ako dira vodu, postavi da je pod = "voda"
     if (r.touching(voda)) {
       r.jump("voda");
+    }
+    if (r.touching(gljiva)) {
+      r.jump(100);
     }
     else {
       r.jump(50);

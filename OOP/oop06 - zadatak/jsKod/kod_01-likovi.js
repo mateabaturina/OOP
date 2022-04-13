@@ -149,6 +149,7 @@ class Racoon extends Animal {
         let vrsta = arguments[0];
         if (vrsta == "voda") {
           console.log("Nemogu skakati");
+          super.jump(0);
         }
         else{
           super.jump();
