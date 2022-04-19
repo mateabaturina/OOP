@@ -151,7 +151,8 @@ class Dinosaur extends Animal {
   }
 
   damage(s) {
-    this.health -= s.value;
+    this.health -= s.damage;
+    s.damage = 0;
   }
 
 }

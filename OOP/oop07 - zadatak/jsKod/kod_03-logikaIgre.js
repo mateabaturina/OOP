@@ -126,6 +126,9 @@ function vjezbe7() {
     if (Postavke.dinosaur.touching(c)) {
       Postavke.dinosaur.collect(c);
       GameSettings.output("Bodovi: " + Postavke.dinosaur.points)
+      if (Postavke.dinosaur.points == Postavke.cilj){
+        btnStop_click();
+      }
     }
   }
 
@@ -134,7 +137,11 @@ function vjezbe7() {
 
     if (Postavke.dinosaur.touching(s)) {
       Postavke.dinosaur.damage(s);
-      GameSettings.output("Zdravlje: " + Postavke.dinosaur.health)
+      GameSettings.colorLog("Zdravlje: " + Postavke.dinosaur.health, "error");
+      if (Postavke.dinosaur.health == 0){
+        ENGINE.stop();
+        GameSettings.output("GAME OVER");
+      }
     }
   }
 }

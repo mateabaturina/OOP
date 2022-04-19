@@ -389,7 +389,7 @@ class Sprite extends GameWorldObjectAnimator {
    * @returns {boolean}
    */
   touching(sprite) {
-    if (sprite.visible == false) return false;
+    if (sprite.visible == false) return false; 
 
     let a = {
       left: this.x,
