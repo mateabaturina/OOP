@@ -49,4 +49,9 @@ function setupVjezbe8() {
   GAME.addSprite(Postavke.coin);
 
   Postavke.coin.postavi();
+
+  Postavke.gljiva = new Gljiva(GAME.getSpriteLayer("gljiva"));
+  GAME.addSprite(Postavke.gljiva);
+
+  Postavke.gljiva.postavi();
 }

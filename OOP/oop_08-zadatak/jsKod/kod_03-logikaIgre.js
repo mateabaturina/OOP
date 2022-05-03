@@ -48,7 +48,14 @@ function vjezbe8() {
     }
 
     GameSettings.output(Postavke.dinosaur.points, true);
+
+    if (Postavke.dinosaur.points == 40) {
+      Postavke.gljiva.visible = true;
+    }
   }
 
-
+  if (Postavke.dinosaur.touching(Postavke.gljiva)) {
+    
+    Postavke.dinosaur.start();
+  }
 }

@@ -154,6 +154,11 @@ class Dinosaur extends Animal {
     c.postavi();
   }
 
+  start() {
+    this.x = 0;
+    this.y = 5;
+  }
+
 }
 
 class Collectable extends Item {
@@ -181,8 +186,32 @@ class Coin extends Collectable {
     super(layer);
 
     this.pozicije = [[4, 6], [7, 5], [11, 5], [13, 4]];
-    this.t = 0; //trenutna
+    this.t = Math.floor(Math.random() * 5);; //trenutna
     this.value = 10;
+  }
+
+  postavi() {
+    let poz = this.pozicije[this.t];
+    this.x = poz[0] * 64;
+    this.y = poz[1] * 64;
+
+    this.t=Math.floor(Math.random() * 5);
+
+    if (this.t >= this.pozicije.length) {
+      this.t = Math.floor(Math.random() * 5);
+    }
+
+    this.visible = true;
+  }
+}
+
+class Gljiva extends Collectable {
+
+  constructor(layer) {
+    super(layer);
+
+    this.pozicije = [[17, 4]];
+    this.t = 0; //trenutna
   }
 
   postavi() {
@@ -196,6 +225,6 @@ class Coin extends Collectable {
       this.t = 0;
     }
 
-    this.visible = true;
+    this.visible = false;
   }
 }
